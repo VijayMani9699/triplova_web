@@ -13,8 +13,8 @@ class AppTheme {
           tertiary: AppColors.gold,
           appBarColor: AppColors.primaryDark,
         ),
-        surfaceMode: FlexSurfaceMode.highScaffoldLowSurface,
-        blendLevel: 10,
+        surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
+        blendLevel: 15,
         appBarStyle: FlexAppBarStyle.primary,
         bottomAppBarElevation: 1.0,
         subThemesData: const FlexSubThemesData(
@@ -47,8 +47,8 @@ class AppTheme {
           tertiary: AppColors.gold,
           appBarColor: AppColors.primaryDark,
         ).toDark(),
-        surfaceMode: FlexSurfaceMode.highScaffoldLowSurface,
-        blendLevel: 15,
+        surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
+        blendLevel: 25,
         appBarStyle: FlexAppBarStyle.background,
         bottomAppBarElevation: 2.0,
         subThemesData: const FlexSubThemesData(

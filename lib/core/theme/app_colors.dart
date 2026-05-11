@@ -9,16 +9,16 @@ class AppColors {
   static const Color gold = Color(0xFFD4AF37); // Luxury Gold for highlights
 
   // Light Mode Colors
-  static const Color lightBg = Color(0xFFFDFCFB); // Soft Cream
+  static const Color lightBg = Color(0xFFF6F9F8); // Sophisticated Minty White
   static const Color lightSurface = Colors.white;
-  static const Color lightText = Color(0xFF1A1A1A);
-  static const Color lightTextSecondary = Color(0xFF757575);
+  static const Color lightText = Color(0xFF141C1B); // Slightly greenish dark text
+  static const Color lightTextSecondary = Color(0xFF5A6664);
 
   // Dark Mode Colors
-  static const Color darkBg = Color(0xFF0A0A0A); // Rich Black
-  static const Color darkSurface = Color(0xFF161616);
-  static const Color darkText = Color(0xFFF5F5F5);
-  static const Color darkTextSecondary = Color(0xFFB0B0B0);
+  static const Color darkBg = Color(0xFF0D1413); // Deep Forest Onyx
+  static const Color darkSurface = Color(0xFF151D1C);
+  static const Color darkText = Color(0xFFE8EFEE);
+  static const Color darkTextSecondary = Color(0xFF9AACAA);
 
   // Glassmorphism Overlay
   static Color glassWhite(double opacity) => Colors.white.withAlpha((opacity * 255).round());
