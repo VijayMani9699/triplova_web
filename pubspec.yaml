@@ -51,6 +51,8 @@ dependencies:
     sdk: flutter
   google_fonts: ^6.3.0
   flutter_animate: ^4.5.2
+  smooth_page_indicator: ^2.0.1
+  url_launcher: ^6.3.2
 
 dev_dependencies:
   flutter_test:

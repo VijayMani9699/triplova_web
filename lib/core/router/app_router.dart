@@ -4,6 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../features/home/presentation/pages/home_page.dart';
 
+import '../../features/home/presentation/pages/package_detail_page.dart';
+import '../../features/home/domain/models/travel_package.dart';
+
 part 'app_router.g.dart';
 
 @riverpod
@@ -14,6 +17,12 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         path: '/',
         builder: (context, state) => const HomePage(),
+      ),
+      GoRoute(
+        path: '/package/:id',
+        builder: (context, state) => PackageDetailPage(
+          package: TravelPackage.mock, // In a real app, fetch based on state.pathParameters['id']
+        ),
       ),
     ],
   );
