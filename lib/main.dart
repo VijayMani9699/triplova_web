@@ -6,9 +6,17 @@ import 'package:trip_web/core/theme/app_theme.dart';
 import 'package:trip_web/shared/providers/theme_provider.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 
+import 'package:meta_seo/meta_seo.dart';
+import 'package:flutter/foundation.dart';
+
 void main() {
   // Use path URL strategy for clean SEO-friendly URLs (removes #)
   usePathUrlStrategy();
+
+  if (kIsWeb) {
+    MetaSEO().config();
+  }
+
   runApp(const ProviderScope(child: TriplovaApp()));
 }
 
@@ -20,7 +28,7 @@ class TriplovaApp extends ConsumerWidget {
     final themeMode = ref.watch(themeModeNotifierProvider);
 
     return MaterialApp.router(
-      title: 'Triplova - Tourism Booking Platform',
+      title: 'Triplova - Luxury Tourism & Curated Experiences',
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       themeMode: themeMode,
