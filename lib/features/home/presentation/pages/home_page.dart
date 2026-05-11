@@ -3,6 +3,7 @@ import '../../../../shared/widgets/navbar/triplova_navbar.dart';
 import '../../../../shared/widgets/navbar/triplova_drawer.dart';
 import '../widgets/hero_section.dart';
 import '../widgets/destination_card.dart';
+import '../widgets/about_us_section.dart';
 import '../../domain/models/destination.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -77,6 +78,9 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
+
+                const AboutUsSection(),
+
                 const SizedBox(height: 100),
               ],
             ),
