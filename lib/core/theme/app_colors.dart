@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   // Brand Colors
-  static const Color primary = Color(0xFF0A886F); // Emerald
-  static const Color primaryDark = Color(0xFF01291D); // Deep Forest
-  static const Color gold = Color(0xFFD4AF37); // Luxury Gold
-  static const Color champagne = Color(0xFFF7E7CE); // Champagne
-  static const Color accent = Color(0xFF64B9AA); // Teal Mint
+  static const Color primary = Color(0xFF0A886F);
+  static const Color primaryDark = Color(0xFF01291D);
+  static const Color secondary = Color(0xFF105345);
+  static const Color accent = Color(0xFF64B9AA);
+  static const Color gold = Color(0xFFD4AF37); // Luxury Gold for highlights
 
   // Light Mode Colors
   static const Color lightBg = Color(0xFFFDFCFB); // Soft Cream
