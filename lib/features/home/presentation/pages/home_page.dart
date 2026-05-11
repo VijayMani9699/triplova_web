@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../shared/widgets/navbar/triplova_navbar.dart';
 import '../../../../shared/widgets/navbar/triplova_drawer.dart';
-import '../../../../core/theme/app_colors.dart';
+import '../widgets/hero_section.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -31,38 +31,9 @@ class _HomePageState extends State<HomePage> {
             controller: _scrollController,
             child: Column(
               children: [
-                // Hero Section Placeholder
-                Container(
-                  height: 800,
-                  width: double.infinity,
-                  decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [AppColors.primaryDark, AppColors.primary],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    ),
-                  ),
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Experience the World',
-                          style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(height: 20),
-                        Text(
-                          'Curated luxury travels for the modern explorer.',
-                          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                            color: Colors.white.withAlpha(200),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                // Hero Section
+                const HeroSection(
+                  imageUrl: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=2000&auto=format&fit=crop',
                 ),
                 // Content to enable scrolling
                 Container(
