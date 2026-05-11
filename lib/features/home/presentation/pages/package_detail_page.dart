@@ -422,7 +422,7 @@ class _PackageDetailPageState extends State<PackageDetailPage> {
             textBaseline: TextBaseline.alphabetic,
             children: [
               Text(
-                '\$${widget.package.price.toInt()}',
+                'Rs. ${widget.package.price.toInt()}',
                 style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
               const Text(' / person', style: TextStyle(color: Colors.grey)),

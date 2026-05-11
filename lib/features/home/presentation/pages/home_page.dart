@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
                           crossAxisCount: _getCrossAxisCount(context),
                           crossAxisSpacing: 24,
                           mainAxisSpacing: 32,
-                          childAspectRatio: 0.8,
+                          childAspectRatio: 0.7,
                         ),
                         itemCount: Destination.mockDestinations.length,
                         itemBuilder: (context, index) {
