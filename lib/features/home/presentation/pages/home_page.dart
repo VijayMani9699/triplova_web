@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 // Hero Section
                 const HeroSection(
-                  imageUrl: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=2000&auto=format&fit=crop',
+                  imageUrl: 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=2000&auto=format&fit=crop',
                 ),
                 // Destinations Section
                 Padding(
