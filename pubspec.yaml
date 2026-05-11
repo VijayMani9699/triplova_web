@@ -49,6 +49,7 @@ dependencies:
   seo: ^0.0.10
   flutter_web_plugins:
     sdk: flutter
+  google_fonts: ^6.3.0
 
 dev_dependencies:
   flutter_test:
