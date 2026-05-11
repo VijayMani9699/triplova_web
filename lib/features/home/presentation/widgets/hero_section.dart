@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -59,50 +58,36 @@ class HeroSection extends StatelessWidget {
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 75),
 
-              Row(
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // Text Content
-                  Expanded(
-                    flex: 3,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Luxury Travel\nRedefined.',
-                          style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w900,
-                            fontSize: isMobile ? 48 : 84,
-                            height: 1.1,
-                          ),
-                        ).animate().fadeIn(delay: 200.ms, duration: 800.ms).slideY(begin: 0.1),
-                        const SizedBox(height: 32),
-                        ConstrainedBox(
-                          constraints: const BoxConstraints(maxWidth: 600),
-                          child: Text(
-                            'Discover hidden paradises and curated experiences tailored for the world\'s most discerning travelers.',
-                            style: TextStyle(
-                              color: Colors.white.withAlpha(200),
-                              fontSize: isMobile ? 16 : 20,
-                              height: 1.6,
-                            ),
-                          ),
-                        ).animate().fadeIn(delay: 400.ms, duration: 800.ms),
-                      ],
+                  Text(
+                    'Luxury Travel\nRedefined.',
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w900,
+                      fontSize: isMobile ? 48 : 84,
+                      height: 1.1,
                     ),
-                  ),
-
-                  // Modern Floating Card (Desktop only)
-                  if (!isMobile)
-                    Expanded(
-                      flex: 2,
-                      child: _buildModernHeroCard(context),
+                  ).animate().fadeIn(delay: 200.ms, duration: 800.ms).slideY(begin: 0.1),
+                  const SizedBox(height: 32),
+                  ConstrainedBox(
+                    constraints: const BoxConstraints(maxWidth: 600),
+                    child: Text(
+                      'Discover hidden paradises and curated experiences tailored for the world\'s most discerning travelers.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white.withAlpha(200),
+                        fontSize: isMobile ? 16 : 20,
+                        height: 1.6,
+                      ),
                     ),
+                  ).animate().fadeIn(delay: 400.ms, duration: 800.ms),
                 ],
               ),
 
@@ -135,79 +120,6 @@ class HeroSection extends StatelessWidget {
                   .slideY(begin: 0.1, end: 0.2, duration: 1.seconds),
             ],
           ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildModernHeroCard(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(32),
-      decoration: BoxDecoration(
-        color: Colors.white.withAlpha(26),
-        borderRadius: BorderRadius.circular(32),
-        border: Border.all(color: Colors.white.withAlpha(51)),
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(32),
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Row(
-                children: [
-                  CircleAvatar(
-                    backgroundColor: AppColors.primary,
-                    child: Icon(Icons.star, color: Colors.white, size: 20),
-                  ),
-                  SizedBox(width: 16),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Top Rated Agency',
-                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        '4.9/5 Average Rating',
-                        style: TextStyle(color: Colors.white70, fontSize: 12),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              const SizedBox(height: 32),
-              const Text(
-                'Trusted by over 50k+ travelers worldwide for curated luxury experiences.',
-                style: TextStyle(color: Colors.white, height: 1.5, fontSize: 16),
-              ),
-              const SizedBox(height: 32),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  _buildStatItem('500+', 'Destinations'),
-                  _buildStatItem('12k+', 'Bookings'),
-                  _buildStatItem('24/7', 'Support'),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-    ).animate().fadeIn(delay: 500.ms).slideX(begin: 0.2);
-  }
-
-  Widget _buildStatItem(String value, String label) {
-    return Column(
-      children: [
-        Text(
-          value,
-          style: const TextStyle(color: AppColors.primary, fontWeight: FontWeight.bold, fontSize: 20),
-        ),
-        Text(
-          label,
-          style: const TextStyle(color: Colors.white70, fontSize: 10),
         ),
       ],
     );
