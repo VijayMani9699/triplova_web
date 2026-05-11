@@ -30,8 +30,8 @@ class SearchBox extends StatelessWidget {
             borderRadius: BorderRadius.circular(24),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withAlpha(20),
-                blurRadius: 20,
+                color: Colors.black.withAlpha(15),
+                blurRadius: 30,
                 offset: const Offset(0, 10),
               ),
             ],
