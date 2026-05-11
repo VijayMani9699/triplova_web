@@ -1,24 +1,20 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'app_colors.dart';
 
 class AppTheme {
-  // Triplova Brand Colors
-  static const Color primary = Color(0xFF0A886F);
-  static const Color primaryDark = Color(0xFF01291D);
-  static const Color secondary = Color(0xFF105345);
-  static const Color accent = Color(0xFF64B9AA);
-
   static ThemeData get light => FlexThemeData.light(
         colors: const FlexSchemeColor(
-          primary: primary,
-          primaryContainer: primaryDark,
-          secondary: secondary,
-          secondaryContainer: accent,
-          tertiary: accent,
-          appBarColor: primaryDark,
+          primary: AppColors.primary,
+          primaryContainer: AppColors.primaryDark,
+          secondary: AppColors.secondary,
+          secondaryContainer: AppColors.accent,
+          tertiary: AppColors.gold,
+          appBarColor: AppColors.primaryDark,
         ),
-        surfaceMode: FlexSurfaceMode.highScaffoldLowSurface,
-        blendLevel: 10,
+        surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
+        blendLevel: 15,
         appBarStyle: FlexAppBarStyle.primary,
         bottomAppBarElevation: 1.0,
         subThemesData: const FlexSubThemesData(
@@ -28,23 +24,31 @@ class AppTheme {
           useM2StyleDividerInM3: true,
           alignedDropdown: true,
           useInputDecoratorThemeInDialogs: true,
+          elevatedButtonRadius: 12,
+          cardRadius: 16,
+          inputDecoratorRadius: 12,
+          inputDecoratorUnfocusedHasBorder: false,
         ),
         visualDensity: FlexColorScheme.comfortablePlatformDensity,
         useMaterial3: true,
-        fontFamily: 'Inter',
+        fontFamily: GoogleFonts.montserrat().fontFamily,
+      ).copyWith(
+        extensions: [
+          LuxuryThemeExtension.light(),
+        ],
       );
 
   static ThemeData get dark => FlexThemeData.dark(
         colors: const FlexSchemeColor(
-          primary: primary,
-          primaryContainer: primaryDark,
-          secondary: secondary,
-          secondaryContainer: accent,
-          tertiary: accent,
-          appBarColor: primaryDark,
+          primary: AppColors.primary,
+          primaryContainer: AppColors.primaryDark,
+          secondary: AppColors.secondary,
+          secondaryContainer: AppColors.accent,
+          tertiary: AppColors.gold,
+          appBarColor: AppColors.primaryDark,
         ).toDark(),
-        surfaceMode: FlexSurfaceMode.highScaffoldLowSurface,
-        blendLevel: 15,
+        surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
+        blendLevel: 25,
         appBarStyle: FlexAppBarStyle.background,
         bottomAppBarElevation: 2.0,
         subThemesData: const FlexSubThemesData(
@@ -53,9 +57,66 @@ class AppTheme {
           useM2StyleDividerInM3: true,
           alignedDropdown: true,
           useInputDecoratorThemeInDialogs: true,
+          elevatedButtonRadius: 12,
+          cardRadius: 16,
+          inputDecoratorRadius: 12,
+          inputDecoratorUnfocusedHasBorder: false,
         ),
         visualDensity: FlexColorScheme.comfortablePlatformDensity,
         useMaterial3: true,
-        fontFamily: 'Inter',
+        fontFamily: GoogleFonts.montserrat().fontFamily,
+      ).copyWith(
+        extensions: [
+          LuxuryThemeExtension.dark(),
+        ],
       );
+}
+
+/// Custom ThemeExtension for premium luxury elements like glassmorphism
+class LuxuryThemeExtension extends ThemeExtension<LuxuryThemeExtension> {
+  final Color glassColor;
+  final Color glassBorder;
+  final double blur;
+
+  LuxuryThemeExtension({
+    required this.glassColor,
+    required this.glassBorder,
+    required this.blur,
+  });
+
+  factory LuxuryThemeExtension.light() => LuxuryThemeExtension(
+        glassColor: Colors.white.withAlpha(26),
+        glassBorder: Colors.white.withAlpha(51),
+        blur: 10,
+      );
+
+  factory LuxuryThemeExtension.dark() => LuxuryThemeExtension(
+        glassColor: Colors.black.withAlpha(51),
+        glassBorder: Colors.white.withAlpha(26),
+        blur: 15,
+      );
+
+  @override
+  LuxuryThemeExtension copyWith({
+    Color? glassColor,
+    Color? glassBorder,
+    double? blur,
+  }) {
+    return LuxuryThemeExtension(
+      glassColor: glassColor ?? this.glassColor,
+      glassBorder: glassBorder ?? this.glassBorder,
+      blur: blur ?? this.blur,
+    );
+  }
+
+  @override
+  LuxuryThemeExtension lerp(ThemeExtension<LuxuryThemeExtension>? other, double t) {
+    if (other is! LuxuryThemeExtension) return this;
+    return LuxuryThemeExtension(
+      glassColor: Color.lerp(glassColor, other.glassColor, t)!,
+      glassBorder: Color.lerp(glassBorder, other.glassBorder, t)!,
+      blur: (blur + (other.blur - blur) * t),
+    );
+  }
+
 }
