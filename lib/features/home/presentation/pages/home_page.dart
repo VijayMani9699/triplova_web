@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import '../../../../shared/widgets/navbar/triplova_navbar.dart';
 import '../../../../shared/widgets/navbar/triplova_drawer.dart';
 import '../widgets/hero_section.dart';
+import '../widgets/destination_card.dart';
+import '../../domain/models/destination.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -35,15 +38,46 @@ class _HomePageState extends State<HomePage> {
                 const HeroSection(
                   imageUrl: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=2000&auto=format&fit=crop',
                 ),
-                // Content to enable scrolling
-                Container(
-                  height: 1200,
-                  width: double.infinity,
-                  color: Theme.of(context).scaffoldBackgroundColor,
-                  child: const Center(
-                    child: Text('Scroll down to see Navbar blur effect'),
+                // Destinations Section
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 60),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Popular Destinations',
+                        style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        'Discover the world\'s most breathtaking locations curated just for you.',
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                              color: Colors.grey,
+                            ),
+                      ),
+                      const SizedBox(height: 40),
+                      GridView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: _getCrossAxisCount(context),
+                          crossAxisSpacing: 24,
+                          mainAxisSpacing: 32,
+                          childAspectRatio: 0.8,
+                        ),
+                        itemCount: Destination.mockDestinations.length,
+                        itemBuilder: (context, index) {
+                          return DestinationCard(
+                            destination: Destination.mockDestinations[index],
+                          );
+                        },
+                      ),
+                    ],
                   ),
                 ),
+                const SizedBox(height: 100),
               ],
             ),
           ),
@@ -58,5 +92,11 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
+  }
+
+  int _getCrossAxisCount(BuildContext context) {
+    if (ResponsiveBreakpoints.of(context).isDesktop) return 4;
+    if (ResponsiveBreakpoints.of(context).isTablet) return 2;
+    return 1;
   }
 }
