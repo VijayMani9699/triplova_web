@@ -7,6 +7,7 @@ class AppColors {
   static const Color secondary = Color(0xFF105345);
   static const Color accent = Color(0xFF64B9AA);
   static const Color gold = Color(0xFFD4AF37); // Luxury Gold for highlights
+  static const Color footerBg = Color(0xFF012148); // Deep Navy Blue for footer
 
   // Light Mode Colors
   static const Color lightBg = Color(0xFFF6F9F8); // Sophisticated Minty White

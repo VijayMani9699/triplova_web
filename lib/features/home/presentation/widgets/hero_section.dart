@@ -16,7 +16,7 @@ class HeroSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final isMobile = ResponsiveBreakpoints.of(context).isMobile;
-    final heroHeight = isMobile ? size.height * 0.7 : size.height * 0.85;
+    final heroHeight = isMobile ? size.height * 0.75 : size.height * 0.92;
 
     return SizedBox(
       height: heroHeight,
@@ -65,7 +65,7 @@ class HeroSection extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const SizedBox(height: 40), // Balanced spacing
+                  const SizedBox(height: 75), // Balanced spacing
 
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -84,7 +84,7 @@ class HeroSection extends StatelessWidget {
                       ConstrainedBox(
                         constraints: const BoxConstraints(maxWidth: 600),
                         child: Text(
-                          'Discover hidden paradises and curated experiences tailored for the world\'s most discerning travelers.',
+                          'Discover hidden paradises tailored for the world\'s most discerning travelers.',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Colors.white.withAlpha(200),
@@ -104,7 +104,7 @@ class HeroSection extends StatelessWidget {
                       .fadeIn(delay: 600.ms, duration: 800.ms)
                       .slideY(begin: 0.2),
                   
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 60),
 
                   // Bottom Scroll Indicator
                   if (!isMobile)
