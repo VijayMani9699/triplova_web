@@ -26,9 +26,9 @@ class TriplovaDrawer extends StatelessWidget {
             ),
           ),
           _buildDrawerItem(context, 'Home', isSelected: true),
-          _buildDrawerItem(context, 'Destinations'),
-          _buildDrawerItem(context, 'Experiences'),
-          _buildDrawerItem(context, 'About Us'),
+          _buildDrawerItem(context, 'Tours'),
+          _buildDrawerItem(context, 'Contact Us'),
+          _buildDrawerItem(context, "FAQ's"),
           const Spacer(),
           Padding(
             padding: const EdgeInsets.all(24.0),
@@ -43,7 +43,7 @@ class TriplovaDrawer extends StatelessWidget {
                 ),
               ),
               child: const Text(
-                'BOOK NOW',
+                'LOGIN / SIGNUP',
                 style: TextStyle(fontWeight: FontWeight.bold, letterSpacing: 1.2),
               ),
             ),

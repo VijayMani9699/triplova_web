@@ -160,10 +160,12 @@ class _DestinationCardState extends State<DestinationCard> {
             const SizedBox(height: 4),
             RichText(
               text: TextSpan(
-                style: theme.textTheme.bodyLarge,
+                style: theme.textTheme.bodyLarge?.copyWith(
+                  color: theme.textTheme.bodyLarge?.color,
+                ),
                 children: [
                   TextSpan(
-                    text: '\$${widget.destination.pricePerNight.toInt()}',
+                    text: 'Rs. ${widget.destination.pricePerNight.toInt()}',
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const TextSpan(text: ' night'),

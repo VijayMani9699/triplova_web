@@ -90,9 +90,9 @@ class _TriplovaNavbarState extends State<TriplovaNavbar> {
                   Row(
                     children: [
                       NavItem(title: 'Home', onTap: () {}, isActive: true),
-                      NavItem(title: 'Destinations', onTap: () {}),
-                      NavItem(title: 'Experiences', onTap: () {}),
-                      NavItem(title: 'About Us', onTap: () {}),
+                      NavItem(title: 'Tours', onTap: () {}),
+                      NavItem(title: 'Contact Us', onTap: () {}),
+                      NavItem(title: "FAQ's", onTap: () {}),
                       const SizedBox(width: 20),
                       // CTA Button
                       ElevatedButton(
@@ -106,7 +106,7 @@ class _TriplovaNavbarState extends State<TriplovaNavbar> {
                           ),
                           elevation: 0,
                         ),
-                        child: const Text('Book Now'),
+                        child: const Text('Login/Signup'),
                       ).animate().scale(delay: 200.ms),
                     ],
                   ),

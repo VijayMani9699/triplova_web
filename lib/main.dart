@@ -32,6 +32,7 @@ class TriplovaApp extends ConsumerWidget {
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       themeMode: themeMode,
+      debugShowCheckedModeBanner: false,
       routerConfig: ref.watch(appRouterProvider),
       builder: (context, child) => ResponsiveBreakpoints.builder(
         child: child!,
